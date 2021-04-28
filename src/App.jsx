@@ -100,13 +100,13 @@ const App = () => {
 								<p>Username :{singleFriend.username}</p>
 								<p>Email :{singleFriend.email}</p>
 								<p>Tél : {singleFriend.phone}</p>
-								<div>Adresse 
+								{/* <div>Adresse 
 									<p>Street : {singleFriend.address.street}</p> 
 									<p>Suite : {singleFriend.address.suite}</p>
 									<p>City : {singleFriend.address.city}</p>
 									<p>Zipcode : {singleFriend.address.zipcode}</p>
 								</div>
-								<p>Company: {singleFriend.company.name}</p>
+								<p>Company: {singleFriend.company.name}</p> */}
 							</div>
 						</div>
 					</Modal>
