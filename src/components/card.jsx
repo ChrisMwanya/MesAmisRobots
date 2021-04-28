@@ -1,6 +1,6 @@
 const Card = (props) => {
     return(
-        <div className="card">
+        <div className="card" onClick={props.onClick}>
             <div className="centered container-img">
                 <img src={props.url} alt = {props.alt} className="img" />
             </div>
