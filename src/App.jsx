@@ -8,25 +8,38 @@ import Loading from "./components/loading";
 Modal.setAppElement("#root");
 const App = () => {
 	let [friends, setFriends] = useState([]);
-	let [friendsMore,setFriendsMore] = useState([]);
+	let [friendsMore, setFriendsMore] = useState([]);
 	let [load, setLoad] = useState(false);
 	let [modalIsOpen, setModalIsOpen] = useState(false);
 	let [singleFriend, setSingleFriend] = useState({});
 	let [friendsTampon, setFriendsTampon] = useState(friends);
 
-	
 	useEffect(() => {
 		setLoad(true);
-		fetch("http://jsonplaceholder.typicode.com/users")
+		fetch("https://jsonplaceholder.typicode.com/users")
 			.then((response) => response.json())
 			.then((data) => {
-				
 				let dataMapped = data.map(({ id, name, email }) => {
 					return { id, name, email };
 				});
+
+				let dataMoreMapped = data.map(
+					({ id, name, email, username, address, phone, website, company }) => {
+						return {
+							id,
+							name,
+							email,
+							username,
+							address,
+							phone,
+							website,
+							company,
+						};
+					}
+				);
 				setFriends(dataMapped);
 				setFriendsTampon(dataMapped);
-				setFriendsMore(data);
+				setFriendsMore(dataMoreMapped);
 				setLoad(false);
 			});
 	}, []);
@@ -76,20 +89,17 @@ const App = () => {
 					<Modal
 						style={{
 							overlay: {
-								backgroundColor : '#0C195A',
+								backgroundColor: "#0C195A",
 								opacity: "O.6",
 							},
-							content: {
-								
-								
-							},
+							content: {},
 						}}
 						isOpen={modalIsOpen}
 						onRequestClose={() => setModalIsOpen(false)}>
-							<h2 className="centered">About my friend</h2>
-							<hr />
+						<h2 className="centered">About my friend</h2>
+						<hr />
 						<div className="modal">
-							<div >
+							<div>
 								<img
 									src={`https://robohash.org/${singleFriend.id}`}
 									alt={singleFriend.name}
