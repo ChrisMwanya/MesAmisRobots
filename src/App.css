@@ -38,26 +38,46 @@ h1 div {
 	margin: 20px;
 }
 
+.less-info{ 
+	transition: all 0.3s ease;
+}
+
 input {
 	font-size: 15px;
 	padding: 10px;
 }
-.card {
+
+.card{
+	position:relative;
+	height: 40vh;
+}
+.card {	
 	display: flex;
 	flex-direction: column;
-
 	align-items: center;
 	background-color: #7af7d0;
 	margin: 20px;
-	width: 200px;
+	width: 210px;	
 	border-radius: 10px;
+	transition: all 0.3s ease;
+}
+
+.More-info{ 
+	padding: 0 10px;
+	transition: all 0.3s ease;
+}
+.More-info h3{ 
+	text-align:center;	
+}
+
+.More-info span{ 
+	font-weight:bold;
 }
 
 .card:hover {
 	transition: all 0.3s ease;
 	transform: scale(1.05);
-	box-shadow: 1px 1px 10px #aaa;
-	background-color: aliceblue;
+	box-shadow: 1px 1px 10px #aaa;	
 }
 
 .img {
@@ -80,30 +100,6 @@ input {
 	padding: 0 20px;
 }
 
-.modal-background {
-	background-color: #0c195a;
-}
-
-.modal {
-	background-color: #fff;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.modal div:nth-child(1) {
-	width: 30%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 5px;
-}
-
-.modal div:nth-child(2) {
-	width: 70%;
-	padding: 0 20px;
-	height: 100%;
-}
 
 /* style importé */
 
